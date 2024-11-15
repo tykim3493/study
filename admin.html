@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin</title>
+    <script src="https://kit.fontawesome.com/36d59001c2.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>  
+<script src="https://cdn.tailwindcss.com"></script>
+<body>
+    <!-- 화면 -->
+    <div class="flex min-h-screen">
+        <!-- 좌측 메뉴바 -->
+        <div class="w-64 h-100 bg-gray-800 text-white px-7">
+        <div class="sticky top-0 py-7">
+            <!-- 로고 -->
+            <div class="text-2xl font-bold pb-3 border-b border-b-gray-600">DASHBOARD</div>
+            <!-- 메뉴 -->
+            <div class="mt-5">
+                <div class="bg-gray-600 px-4 py-2 rounded-lg"><span>대시보드</span></div>
+                <div class="px-4 py-2 mt-3"><span>프로젝트</span></div>
+                <div class="px-4 py-2 mt-3"><span>메시지</span></div>
+                <div class="px-4 py-2 mt-3"><span>일정</span></div>
+                <div class="px-4 py-2 mt-3"><span>문서</span></div>
+                <div class="px-4 py-2 mt-3"><span>설정</span></div>
+            </div>
+        </div>
+        </div>
+        <!-- 우측 메인영역 -->
+        <div class="flex-1 bg-gray-100">
+            <!-- 헤더 -->
+            <div class="sticky top-0">
+            <div class="flex px-7 py-4 shadow-lg bg-white">
+                <!-- 검색창 -->
+                <div class="flex-1">
+                    <input placeholder="검색..." class="text-gray-400 text-sm border border-gray-400 rounded-full px-4 py-2 w-96">
+                </div>
+                <!-- 로그인 -->
+                <div class="w-64 flex justify-end items-center">
+                    <i class="fa-solid fa-bell text-orange-600"></i>
+                    <div class="w-10 h-10 rounded-full bg-gray-300 ml-5"></div>
+                    <span class="ml-5">사용자 이름</span>
+                </div>
+            </div>
+            </div>
+            <!-- 본문 -->
+            <div class="m-7">
+                <!-- 상 -->
+                <div class="grid grid-cols-4 gap-7">
+                    <div class="bg-white rounded-lg shadow-lg p-5">
+                        <div><span class="text-xl font-bold">총 프로젝트</span></div>
+                        <div><span>48개</span></div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-5">
+                        <div><span class="text-xl font-bold">진행중</span></div>
+                        <div><span>12개</span></div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-5">
+                        <div><span class="text-xl font-bold">완료</span></div>
+                        <div><span>36개</span></div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-5">
+                        <div><span class="text-xl font-bold">팀원</span></div>
+                        <div><span>156명</span></div>
+                    </div>
+                </div>
+                <!-- 중 -->
+                <div class="grid grid-cols-3 gap-7 mt-7">
+                    <div class="bg-white rounded-lg shadow-lg p-5 col-span-2">
+                        <div><span class="text-xl font-bold">프로젝트 진행 현황</span></div>
+                        <div class="w-auto h-96 rounded-xl mt-2 bg-gradient-to-r from-cyan-500 to-blue-500"></div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-5">
+                        <div><span class="text-xl font-bold">공지사항</span></div>
+                        <div class="w-auto border-b border-b-gray-200 mt-2 px-0 py-2">
+                            <span>새로운 프로젝트 시작</span>
+                        </div>
+                        <div class="w-auto border-b border-b-gray-200 mt-2 px-0 py-2">
+                            <span>시스템 업데이트 예정</span>
+                        </div>
+                        <div class="w-auto border-b border-b-gray-200 mt-2 px-0 py-2">
+                            <span>팀 미팅 일정</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 하 -->
+                <div class="grid grid-cols-3 gap-7 mt-7">
+                    <div class="bg-white rounded-lg shadow-lg p-5 col-span-2">
+                        <div><span class="text-xl font-bold">최근 활동</span></div>
+                        <div class="w-auto border-b border-b-gray-200 mt-2 px-0 py-2">
+                            <span>홍길동님이 프로젝트를 수정했습니다</span>
+                        </div>
+                        <div class="w-auto border-b border-b-gray-200 mt-2 px-0 py-2">
+                            <span>새로운 댓글이 달렸습니다</span>
+                        </div>
+                        <div class="w-auto border-b border-b-gray-200 mt-2 px-0 py-2">
+                            <span>김철수님의 문서를 업로드했습니다</span>
+                        </div>
+                        <div class="w-auto border-b border-b-gray-200 mt-2 px-0 py-2">
+                            <span>프로젝트 마감일이 변경되었습니다</span>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-5">
+                        <div><span class="text-xl font-bold">일정</span></div>
+                        <div class="grid grid-cols-7 gap-4 mt-2 overflow-hidden">
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                            <div class="bg-gray-100 rounded-lg aspect-square min-w-14"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

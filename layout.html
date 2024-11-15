@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout</title>
+    <script src="https://kit.fontawesome.com/36d59001c2.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+<body>
+    <!-- 전체박스 -->
+    <div style="background-color: #f4f4f4;">
+        <!-- 메인박스 -->
+        <div style="width: 1200px; display: flex; flex-direction: column; margin: 0 auto;">
+        <div style="background-color: white; margin: 30px 0; box-shadow: 0 0 20px 0 #ccc;">
+
+            <!-- 헤더: 플로팅 -->
+            <div style="padding: 30px; display: flex; flex-direction: row; background-color: white; position: sticky; top: 0px;">
+                <!-- 로고 -->
+                <div style="padding: 0 10px;">
+                    <span style="font-family:Georgia;"><h1>Universe</h1></span>
+                </div>
+                <div style="position: absolute; top: 20px; left:82px;">
+                    <span style="font-size: 20px; color: black;"><i class="fa-solid fa-wifi"></i></span>
+                </div>
+                <!-- 메뉴 -->
+                <div style="flex: 1; padding: 0 30px; display:flex; align-items: center; flex-direction: row;">
+                    <div style="margin-left: 30px; border-bottom: 5px solid black;">
+                        <span style="font-size: 20px; font-weight: 600;">홈</span>
+                    </div>
+                    <div style="margin-left: 40px; font-size: 20px; color: #666;">
+                        <span style="font-size: 20px; font-weight: 400;">소개</span>
+                    </div>
+                    <div style="margin-left: 40px; font-size: 20px; color: #666;">
+                        <span style="font-size: 20px; font-weight: 400;">서비스</span>
+                    </div>
+                    <div style="margin-left: 40px; font-size: 20px; color: #666;">
+                        <span style="font-size: 20px; font-weight: 400;">게시판</span>
+                    </div>
+                </div>
+                <!-- 로그인 -->
+                <div style="padding: 0 10px; display:flex; align-items: center; font-size: 25px;">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    <i class="fa-solid fa-magnifying-glass" style="padding-left: 20px;"></i>
+                </div> 
+            </div>
+
+            <!-- 배너 : 세로 500px 고정 -->
+            <div style="background-image: url('https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTJ8fHxlbnwwfHx8fHw%3D'); background-size: cover; background-position : 50% 50%; height: 500px; display:flex; align-items: center; margin: 0 30px; border-radius: 20px;">
+                <div>
+                <!-- 배너 텍스트 -->
+                <div style="margin-left: 80px;">
+                    <span style="color: white; font-size: 20px;"><h1>Welcome<br>to Our Site</h1><br></span>
+                    <span style="color: #ccc; margin-top: 15px; font-size: 20px;">깔끔하고 심플한 디자인으로 제작된 웹사이트입니다.<br>
+                    고정 레이아웃으로 제작되어 있어 모든 환경에서<br>
+                    동일한 디자인을 유지합니다.</span>
+                </div>
+                <!-- 버튼 -->
+                <div style="display: flex; flex-direction: row; margin: 60px 0 0 80px;">
+                    <div style="background-color: blue; padding: 15px; border-radius: 5px;">
+                        <span style="color: white;">자세히보기</span>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- 위젯 -->
+            <div style="padding: 80px;">
+                <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                    <!-- 섹션1 -->
+                    <div style="width: 250px; height: 300px; background-color: white; padding: 30px; border-radius: 15px; border: 0px solid white; box-shadow: 0 0 15px 0 #ccc;">
+                        <!-- 타이틀 -->
+                        <div style="display: flex; flex-direction: row; align-items: center;">
+                            <i class="fa-solid fa-ghost" style="margin-right: 5px; font-size: 20px;"></i>
+                            <span style="font-weight: 900; font-size: 25px;">Section 1</span>
+                        </div>
+                        <!-- 텍스트 -->
+                        <div style="margin-top: 20px;">
+                            <span style="color: gray;">첫 번째 섹션입니다.<br> 여기에 원하는 내용을 넣어주세요.<br>텍스트는 자유롭게 수정 가능합니다.</span>
+                        </div>
+                        <!-- 버튼 -->
+                        <div style="display: flex; flex-direction: row;"">
+                            <div style="background-color: red; padding: 10px; margin-top: 20px; border-radius: 5px;">
+                                <span style="color: white;">더보기</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 섹션2 -->
+                    <div style="width: 250px; height: 300px; background-color: #f4f4f4; padding: 30px; border-radius: 15px;">
+                          <!-- 타이틀 -->
+                          <div style="display: flex; flex-direction: row; align-items: center;">
+                            <i class="fa-solid fa-ghost" style="margin-right: 5px; font-size: 20px;"></i>
+                            <span style="font-weight: 900; font-size: 25px;">Section 1</span>
+                        </div>
+                        <!-- 텍스트 -->
+                        <div style="margin-top: 20px;">
+                            <span style="color: gray;">첫 번째 섹션입니다.<br> 여기에 원하는 내용을 넣어주세요.<br>텍스트는 자유롭게 수정 가능합니다.</span>
+                        </div>
+                        <!-- 버튼 -->
+                        <div style="display: flex; flex-direction: row;"">
+                            <div style="background-color: green; padding: 10px; margin-top: 20px; border-radius: 5px;">
+                                <span style="color: white;">더보기</span>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- 섹션3 -->
+                    <div style="width: 250px; height: 300px; background-color: #f4f4f4; padding: 30px; border-radius: 15px;">
+                        <!-- 타이틀 -->
+                        <div style="display: flex; flex-direction: row; align-items: center;">
+                            <i class="fa-solid fa-ghost" style="margin-right: 5px; font-size: 20px;"></i>
+                            <span style="font-weight: 900; font-size: 25px;">Section 1</span>
+                        </div>
+                        <!-- 텍스트 -->
+                        <div style="margin-top: 20px;">
+                            <span style="color: gray;">첫 번째 섹션입니다.<br> 여기에 원하는 내용을 넣어주세요.<br>텍스트는 자유롭게 수정 가능합니다.</span>
+                        </div>
+                        <!-- 버튼 -->
+                        <div style="display: flex; flex-direction: row;"">
+                            <div style="background-color: green; padding: 10px; margin-top: 20px; border-radius: 5px;">
+                                <span style="color: white;">더보기</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 푸터 -->
+            <div style="background-color: #999; padding: 40px; text-align: center;">
+                <span style="color: white;">© 2024 Universe. All Rights Reserved.</span>
+            </div>
+
+        </div>
+        </div>
+
+        <!-- 플로팅배너 -->
+        <div style="background-color: white; box-shadow: 0 0 10px 0 #ccc; padding: 10px; border-radius: 10px; position:fixed; right: 30px; bottom: 30px;">
+        <span style="font-size: 25px; color: #333;"><i class="fa-solid fa-chevron-up"></i></span>
+        </div>
+    </div>
+</body>
+</html>
