@@ -44,16 +44,22 @@ function add() {
     outDiv.append(todoDiv)
     outDiv.append(buttonDiv)
 
-    // 추가할 div 변수에 완성된 구조를 넣는다. (입력값이 있을때만)
+    // 추가할 div 변수에 완성된 구조를 넣는다. / 입력값이 있을때만
     if (todoInput.value.length > 0) {
         todolistDiv.append(outDiv)
     }
     // todoInput 의 value 값을 초기화한다.
     todoInput.value = null
 
-    // 삭제 구현
+    // 삭제 구현 / 확인창 추가
     function deleteTodo() {
-        outDiv.remove()
+        const deleteConfirm = confirm("정말 삭제하시겠어요?");
+        if (deleteConfirm) {
+            outDiv.remove()
+        }
+        else {
+
+        }
     }
     deleteDiv.addEventListener("click", deleteTodo)
 
