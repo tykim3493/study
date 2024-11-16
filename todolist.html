@@ -108,9 +108,9 @@
                 // 수정 input 생성
                 const modifyInput = document.createElement("input")
                 modifyInput.value = todoSpan.innerText
-                modifyInput.className = "w-full rounded-lg border border-gray-300 p-1"
+                modifyInput.className = "w-full rounded-xl border border-gray-300 px-2 py-1"
                 // modifyI 를 연필에서 체크로 변경
-                modifyI.className = "fa-solid fa-check"
+                modifyI.className = "fa-solid fa-check w-[16px]"
                 // todoSpan 를 modifyInput 으로 교체
                 todoDiv.replaceChild(modifyInput, todoSpan)
             }
