@@ -118,15 +118,14 @@
                 // 수정 input 생성
                 const modifyInput = document.createElement("input")
                 modifyInput.value = todoInputValue
-                modifyInput.id = "modifyInput"
                 // modifyI 를 연필에서 체크로 변경
                 modifyI.className = "fa-solid fa-check"
                 // todoSpan 를 modifyInput 으로 교체
                 todoDiv.replaceChild(modifyInput, todoSpan)
             }
             else if (modifyI.classList.contains('fa-check')) {
-                // modifyInput 을 id로 불러와 변수에 저장 
-                const modifyInput = document.querySelector("#modifyInput")
+                // modifyInput 을 변수에 저장 
+                const modifyInput = todoDiv.querySelector("input")
                 // 수정 입력값 변수 생성
                 const todoSpan = document.createElement("span")
                 const modifyInputValue = modifyInput.value
