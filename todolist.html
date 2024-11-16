@@ -97,13 +97,13 @@
         todolistDiv.append(outDiv)
 
         // 삭제 구현
-        function removeDiv() {
+        function deleteTodo() {
             outDiv.remove()
         }
-        deleteDiv.addEventListener("click", removeDiv)
+        deleteDiv.addEventListener("click", deleteTodo)
 
         // 수정 구현
-        function modified() {
+        function modifyTodo() {
             if (modifyI.classList.contains("fa-pencil")) {
                 // 수정 input 생성
                 const modifyInput = document.createElement("input")
@@ -125,7 +125,7 @@
                 todoDiv.replaceChild(todoSpan, modifyInput)
             }
         }
-        modifyDiv.addEventListener("click", modified)
+        modifyDiv.addEventListener("click", modifyTodo)
     }  
 </script>
 </html>
