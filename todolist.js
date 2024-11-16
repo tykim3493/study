@@ -59,7 +59,7 @@ function add() {
             // 수정 input 생성
             const modifyInput = document.createElement("input")
             modifyInput.value = todoSpan.innerText
-            modifyInput.className = "w-full rounded-xl border border-gray-300 px-2 py-1"
+            modifyInput.className = "w-full rounded-xl outline-none bg-gray-400 text-white px-2 py-1"
             // 연필에서 체크로 변경
             modifyI.className = "fa-solid fa-check w-[16px]"
             // todoSpan 를 modifyInput 으로 교체
