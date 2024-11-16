@@ -117,23 +117,23 @@
             if (modifyI.classList.contains("fa-pencil")) {
                 // 수정 input 생성
                 const modifyInput = document.createElement("input")
-                modifyInput.value = todoInputValue
+                modifyInput.value = todoSpan.innerText
+                modifyInput.className = "w-full rounded-lg border border-gray-300 p-1"
                 // modifyI 를 연필에서 체크로 변경
                 modifyI.className = "fa-solid fa-check"
                 // todoSpan 를 modifyInput 으로 교체
                 todoDiv.replaceChild(modifyInput, todoSpan)
             }
             else if (modifyI.classList.contains('fa-check')) {
-                // modifyInput 을 변수에 저장 
+                // input 을 변수에 저장 
                 const modifyInput = todoDiv.querySelector("input")
                 // 수정 입력값 변수 생성
-                const todoSpan = document.createElement("span")
-                const modifyInputValue = modifyInput.value
-                todoSpan.innerText = modifyInputValue
+                const todoSpanNew = document.createElement("span")
+                todoSpanNew.innerText = modifyInput.value
                 // modifyI 를 체크에서 연필로 변경
                 modifyI.className = "fa-solid fa-pencil"
-                // modifiedInput 을 modifiedContent 로 교체
-                todoDiv.replaceChild(todoSpan, modifyInput)
+                // modifyInput 을 todoSpanNew 로 교체
+                todoDiv.replaceChild(todoSpanNew, modifyInput)
             }
         }
         modifyDiv.addEventListener("click", modified)
