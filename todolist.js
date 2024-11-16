@@ -43,8 +43,11 @@ function add() {
     buttonDiv.append(deleteDiv)
     outDiv.append(todoDiv)
     outDiv.append(buttonDiv)
+
     // 추가할 div 변수에 완성된 구조를 넣는다.
     todolistDiv.append(outDiv)
+    // todoInput 의 value 값을 초기화한다.
+    todoInput.value = null
 
     // 삭제 구현
     function deleteTodo() {
