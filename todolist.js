@@ -6,19 +6,20 @@ function add() {
     // todoInput에 입력 값 (Value)를 변수에 넣어둔다.
     const todoInputValue = todoInput.value
     // add()를 클릭했을 때 추가할 곳 밖의 div의 id로 접근하여 변수에 넣어둔다.
-    const todolistDiv = document.querySelector("#todolistDiv")
+    const todoUl = document.querySelector("#todoUl")
 
     // div구성 : 구성을 엘리먼트를 생성하여 변수에 넣어둔다.
-    const outDiv = document.createElement("div")
+    const todoLi = document.createElement("li")
     // 변수에 클래스를 넣어둔다.
-    outDiv.className = "flex border-t border-gray-300 pt-2 mt-2 items-center"
+    todoLi.className = "flex p-3 mt-5 items-center rounded-2xl bg-gray-100 border border-gray-300"
 
-    const todoDiv = document.createElement("div")
-    todoDiv.className = "flex-1 text-left pr-4 truncate hover:overflow-visible hover:whitespace-normal"
+    const todoTextDiv = document.createElement("div")
+    todoTextDiv.className = "flex-1 text-left pr-4 truncate hover:overflow-visible hover:whitespace-normal"
 
-    const todoSpan = document.createElement("span")
+    const todoTextSpan = document.createElement("span")
     // 변수에 입력한 텍스트를 넣어둔다.
-    todoSpan.innerText = todoInputValue
+    todoTextSpan.innerText = todoInputValue
+    todoTextSpan.className = "text-gray-600"
 
     const buttonDiv = document.createElement("div")
     buttonDiv.className = "flex"
@@ -36,17 +37,17 @@ function add() {
     deleteI.className = "fa-solid fa-trash"
 
     // div를 트리 구성대로 안으로 포함시킨다. Depth가 깊은 것부터 넣는다.
-    todoDiv.append(todoSpan)
+    todoTextDiv.append(todoTextSpan)
     modifyDiv.append(modifyI)
     deleteDiv.append(deleteI)
     buttonDiv.append(modifyDiv)
     buttonDiv.append(deleteDiv)
-    outDiv.append(todoDiv)
-    outDiv.append(buttonDiv)
+    todoLi.append(todoTextDiv)
+    todoLi.append(buttonDiv)
 
     // 추가할 div 변수에 완성된 구조를 넣는다. / 입력값이 있을때만
     if (todoInput.value.length > 0) {
-        todolistDiv.append(outDiv)
+        todoUl.append(todoLi)
     }
     // todoInput 의 value 값을 초기화한다.
     todoInput.value = null
@@ -55,7 +56,7 @@ function add() {
     function deleteTodo() {
         const deleteConfirm = confirm("정말 삭제하시겠어요?");
         if (deleteConfirm) {
-            outDiv.remove()
+            todoLi.remove()
         }
         else {
 
@@ -69,23 +70,23 @@ function add() {
         if (modifyI.classList.contains("fa-pencil")) {
             // 수정 input 생성
             const modifyInput = document.createElement("input")
-            modifyInput.value = todoSpan.innerText
+            modifyInput.value = todoTextSpan.innerText
             modifyInput.className = "w-full rounded-xl outline-none bg-gray-400 text-white px-2 py-1"
             // 연필에서 체크로 변경
             modifyI.className = "fa-solid fa-check w-[16px]"
             // todoSpan 를 modifyInput 으로 교체
-            todoDiv.replaceChild(modifyInput, todoSpan)
+            todoTextDiv.replaceChild(modifyInput, todoTextSpan)
         }
         // 체크 아이콘일 때
         else if (modifyI.classList.contains('fa-check')) {
             // 수정하고 있는 input 을 변수로
-            const modifyInput = todoDiv.querySelector("input")
+            const modifyInput = todoTextDiv.querySelector("input")
             // span 입력값 다시 저장
-            todoSpan.innerText = modifyInput.value
+            todoTextSpan.innerText = modifyInput.value
             // 체크에서 연필로 변경
             modifyI.className = "fa-solid fa-pencil"
             // modifyInput 을 todoSpan 으로 교체
-            todoDiv.replaceChild(todoSpan, modifyInput)
+            todoTextDiv.replaceChild(todoTextSpan, modifyInput)
         }
     }
     modifyDiv.addEventListener("click", modifyTodo)
