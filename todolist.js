@@ -11,15 +11,20 @@ function add() {
     // div구성 : 구성을 엘리먼트를 생성하여 변수에 넣어둔다.
     const todoLi = document.createElement("li")
     // 변수에 클래스를 넣어둔다.
-    todoLi.className = "flex p-3 mt-5 items-center rounded-2xl bg-gray-100 border border-gray-300"
+    todoLi.className = "flex p-3 mt-3 items-center rounded-2xl bg-gray-100 border border-gray-300"
 
     const todoTextDiv = document.createElement("div")
-    todoTextDiv.className = "flex-1 text-left pr-4 truncate hover:overflow-visible hover:whitespace-normal"
+    todoTextDiv.className = "flex-1 flex items-center text-left pr-4 truncate hover:overflow-visible hover:whitespace-normal"
+
+    // 체크박스 추가
+    const todoCheckbox = document.createElement("input")
+    todoCheckbox.className = "w-5 h-5 border border-gray-300"
+    todoCheckbox.type = "checkbox"
 
     const todoTextSpan = document.createElement("span")
     // 변수에 입력한 텍스트를 넣어둔다.
     todoTextSpan.innerText = todoInputValue
-    todoTextSpan.className = "text-gray-600"
+    todoTextSpan.className = "ml-2 text-gray-600"
 
     const buttonDiv = document.createElement("div")
     buttonDiv.className = "flex"
@@ -37,6 +42,7 @@ function add() {
     deleteI.className = "fa-solid fa-trash"
 
     // div를 트리 구성대로 안으로 포함시킨다. Depth가 깊은 것부터 넣는다.
+    todoTextDiv.append(todoCheckbox)
     todoTextDiv.append(todoTextSpan)
     modifyDiv.append(modifyI)
     deleteDiv.append(deleteI)
@@ -71,21 +77,22 @@ function add() {
             // 수정 input 생성
             const modifyInput = document.createElement("input")
             modifyInput.value = todoTextSpan.innerText
-            modifyInput.className = "w-full rounded-xl outline-none bg-gray-400 text-white px-2 py-1"
+            modifyInput.className = "w-72 ml-2 rounded-xl outline-none bg-gray-400 text-white px-2 py-1"
+            modifyInput.id = "modifyInput"
             // 연필에서 체크로 변경
             modifyI.className = "fa-solid fa-check w-[16px]"
-            // todoSpan 를 modifyInput 으로 교체
+            // todoTextSpan 를 modifyInput 으로 교체
             todoTextDiv.replaceChild(modifyInput, todoTextSpan)
         }
         // 체크 아이콘일 때
         else if (modifyI.classList.contains('fa-check')) {
             // 수정하고 있는 input 을 변수로
-            const modifyInput = todoTextDiv.querySelector("input")
+            const modifyInput = todoTextDiv.querySelector("#modifyInput")
             // span 입력값 다시 저장
             todoTextSpan.innerText = modifyInput.value
             // 체크에서 연필로 변경
             modifyI.className = "fa-solid fa-pencil"
-            // modifyInput 을 todoSpan 으로 교체
+            // modifyInput 을 todoTextSpan 으로 교체
             todoTextDiv.replaceChild(todoTextSpan, modifyInput)
         }
     }
