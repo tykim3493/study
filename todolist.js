@@ -11,20 +11,26 @@ function add() {
     // div구성 : 구성을 엘리먼트를 생성하여 변수에 넣어둔다.
     const todoLi = document.createElement("li")
     // 변수에 클래스를 넣어둔다.
-    todoLi.className = "flex p-3 mt-3 items-center rounded-2xl bg-gray-100 border border-gray-300"
+    todoLi.className = "flex items-center mt-3"
 
-    const todoTextDiv = document.createElement("div")
-    todoTextDiv.className = "flex-1 flex items-center text-left pr-4 truncate hover:overflow-visible hover:whitespace-normal"
+    const todoCheckboxDiv = document.createElement("div")
+    todoCheckboxDiv.className = "flex items-center"
 
     // 체크박스 추가
     const todoCheckbox = document.createElement("input")
     todoCheckbox.className = "w-5 h-5 border border-gray-300"
     todoCheckbox.type = "checkbox"
+    
+    const todoDiv = document.createElement("div")
+    todoDiv.className = "flex-1 flex p-3 ml-2 items-center rounded-2xl bg-gray-100 border border-gray-300"
+
+    const todoTextDiv = document.createElement("div")
+    todoTextDiv.className = "flex-1 flex items-center text-left pr-4"
 
     const todoTextSpan = document.createElement("span")
     // 변수에 입력한 텍스트를 넣어둔다.
     todoTextSpan.innerText = todoInputValue
-    todoTextSpan.className = "ml-2 text-gray-600"
+    todoTextSpan.className = "text-gray-600"
 
     const buttonDiv = document.createElement("div")
     buttonDiv.className = "flex"
@@ -48,8 +54,12 @@ function add() {
     deleteDiv.append(deleteI)
     buttonDiv.append(modifyDiv)
     buttonDiv.append(deleteDiv)
-    todoLi.append(todoTextDiv)
-    todoLi.append(buttonDiv)
+    todoDiv.append(todoTextDiv)
+    todoDiv.append(buttonDiv)
+    todoCheckboxDiv.append(todoCheckbox)
+    todoLi.append(todoCheckboxDiv)
+    todoLi.append(todoDiv)
+
 
     // 추가할 div 변수에 완성된 구조를 넣는다. / 입력값이 있을때만
     if (todoInput.value.length > 0) {
@@ -77,7 +87,7 @@ function add() {
             // 수정 input 생성
             const modifyInput = document.createElement("input")
             modifyInput.value = todoTextSpan.innerText
-            modifyInput.className = "w-72 ml-2 rounded-xl outline-none bg-gray-400 text-white px-2 py-1"
+            modifyInput.className = "w-full rounded-xl outline-none bg-gray-400 text-white px-2 py-1"
             modifyInput.id = "modifyInput"
             // 연필에서 체크로 변경
             modifyI.className = "fa-solid fa-check w-[16px]"
