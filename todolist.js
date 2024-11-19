@@ -145,5 +145,6 @@ function deleteAll() {
             )
         }
     }
+    selectAllCheckbox.checked = false
 }
 
