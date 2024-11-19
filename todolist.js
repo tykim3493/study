@@ -18,8 +18,9 @@ function add() {
 
     // 체크박스 추가
     const todoCheckbox = document.createElement("input")
-    todoCheckbox.className = "w-5 h-5 border border-gray-300"
+    todoCheckbox.className = "w-5 h-5 border border-blue-300"
     todoCheckbox.type = "checkbox"
+    todoCheckbox.id = "chk"
     
     const todoDiv = document.createElement("div")
     todoDiv.className = "flex-1 flex p-3 ml-2 items-center rounded-2xl bg-gray-100 border border-gray-300"
@@ -60,11 +61,14 @@ function add() {
     todoLi.append(todoCheckboxDiv)
     todoLi.append(todoDiv)
 
-
     // 추가할 div 변수에 완성된 구조를 넣는다. / 입력값이 있을때만
     if (todoInput.value.length > 0) {
         todoUl.append(todoLi)
     }
+    else {
+        alert("할 일을 입력해주세요.")
+    }
+
     // todoInput 의 value 값을 초기화한다.
     todoInput.value = null
 
@@ -87,7 +91,7 @@ function add() {
             // 수정 input 생성
             const modifyInput = document.createElement("input")
             modifyInput.value = todoTextSpan.innerText
-            modifyInput.className = "w-full rounded-xl outline-none bg-gray-400 text-white px-2 py-1"
+            modifyInput.className = "w-full rounded-xl outline-none bg-gray-300 text-white px-2 py-1"
             modifyInput.id = "modifyInput"
             // 연필에서 체크로 변경
             modifyI.className = "fa-solid fa-check w-[16px]"
@@ -108,3 +112,30 @@ function add() {
     }
     modifyDiv.addEventListener("click", modifyTodo)
 }
+
+// 전체선택 체크박스
+const selectAllCheckbox = document.querySelector("#selectAllCheckbox")
+selectAllCheckbox.addEventListener("click", checkAll)
+
+// 전체선택 or 전체선택 해제
+function checkAll() {
+    const allCheckbox = document.querySelectorAll("#chk");
+    if (selectAllCheckbox.checked) { // 공부 필요
+      allCheckbox.forEach((el) => (el.checked = true))
+    } else {
+      allCheckbox.forEach((el) => (el.checked = false))
+    }
+}
+
+// 전체삭제
+function deleteAll() {
+    const checkedTodo = document.querySelectorAll("#chk:checked")
+    checkedTodo.forEach(
+        function(my) {
+        const parentNode = my.parentNode
+        const reparent = parentNode.parentNode
+        reparent.remove();
+        }
+    )
+}
+
