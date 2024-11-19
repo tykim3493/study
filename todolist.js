@@ -83,9 +83,6 @@ function add() {
         if (deleteConfirm) {
             todoLi.remove()
         }
-        else {
-
-        }
     }
     deleteDiv.addEventListener("click", deleteTodo)
 
@@ -125,8 +122,8 @@ selectAllCheckbox.addEventListener("click", checkAll)
 // 전체선택 or 전체선택 해제
 function checkAll() {
     const allCheckbox = document.querySelectorAll("#chk");
-    if (selectAllCheckbox.checked) { // 공부 필요
-      allCheckbox.forEach((el) => (el.checked = true))
+    if (selectAllCheckbox.checked) { 
+      allCheckbox.forEach((el) => (el.checked = true)) // 공부 필요
     } else {
       allCheckbox.forEach((el) => (el.checked = false))
     }
@@ -135,12 +132,18 @@ function checkAll() {
 // 전체삭제
 function deleteAll() {
     const checkedTodo = document.querySelectorAll("#chk:checked")
-    checkedTodo.forEach(
-        function(my) {
-        const parentNode = my.parentNode
-        const reparent = parentNode.parentNode
-        reparent.remove();
+    const selectedCheckboxCnt = checkedTodo.length
+    if (selectedCheckboxCnt > 0) { 
+        const deleteConfirm = confirm("선택된 할일을 삭제하시겠어요?")
+        if (deleteConfirm) {
+            checkedTodo.forEach(
+                function(my) {
+                const parentNode = my.parentNode
+                const reparent = parentNode.parentNode
+                reparent.remove();
+                }
+            )
         }
-    )
+    }
 }
 

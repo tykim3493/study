@@ -56,14 +56,18 @@
                     <input type="checkbox" class="w-5 h-5 border border-blue-300" id="selectAllCheckbox">
                     <span class="ml-2 text-sm text-gray-600">전체선택</span>
                 </div>
-                <div class="flex mr-3">
-                    <div class="px-2 py-1 bg-red-600 hover:bg-red-800 rounded-lg text-white ml-2 hover:cursor-pointer" onclick="deleteAll()"><i class="fa-solid fa-trash"></i></div>
+                <div class="flex mr-3 items-center">
+                    <span class="text-sm text-red-600">
+                        선택삭제
+                    </span>
+                    <div class="px-2 py-1 bg-red-600 hover:bg-red-800 rounded-lg text-white ml-2 hover:cursor-pointer" onclick="deleteAll()">
+                        <i class="fa-solid fa-trash"></i></div>
                 </div>
             </div>
         </div>
         <!-- 캡션 -->
         <div class="mt-3 text-gray-300 text-sm">
-            <span>ver.1119_02_체크시 할일 css 적용</span>
+            <span>ver.1119_03_체크박스 선택 없을시 미작동</span>
         </div>
     </div>
 </body>
