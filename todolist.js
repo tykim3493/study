@@ -21,6 +21,11 @@ function add() {
     todoCheckbox.className = "w-5 h-5 border border-blue-300"
     todoCheckbox.type = "checkbox"
     todoCheckbox.id = "chk"
+    // 체크시 할일 텍스트 css 추가
+    todoCheckbox.addEventListener("click", () => {
+		todoTextSpan.classList.toggle("line-through")
+        todoTextSpan.classList.toggle("text-gray-400")
+    })
     
     const todoDiv = document.createElement("div")
     todoDiv.className = "flex-1 flex p-3 ml-2 items-center rounded-2xl bg-gray-100 border border-gray-300"
