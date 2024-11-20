@@ -123,7 +123,7 @@ selectAllCheckbox.addEventListener("click", checkAll)
 function checkAll() {
     const allCheckbox = document.querySelectorAll("#chk");
     if (selectAllCheckbox.checked) { 
-      allCheckbox.forEach((el) => (el.checked = true)) // 공부 필요
+      allCheckbox.forEach((el) => (el.checked = true)) //?
     } else {
       allCheckbox.forEach((el) => (el.checked = false))
     }
@@ -137,7 +137,7 @@ function deleteAll() {
         const deleteConfirm = confirm("선택된 할일을 삭제하시겠어요?")
         if (deleteConfirm) {
             checkedTodo.forEach(
-                function(my) {
+                function(my) { //?
                 const parentNode = my.parentNode
                 const reparent = parentNode.parentNode
                 reparent.remove();
@@ -145,6 +145,15 @@ function deleteAll() {
             )
         }
     }
+    else (
+        alert("삭제할 할일을 선택하세요.")
+    )
     selectAllCheckbox.checked = false
 }
 
+// 선택된 할일의 갯수 출력
+const checkedTodo = document.querySelectorAll("#chk:checked")
+const selectedCheckboxCnt = checkedTodo.length
+document.querySelector("#printSelectedCheckboxCnt").innerText = selectedCheckboxCnt
+
+// 엔터, 체크박스css, 포인터, const중복, 함수밖const
