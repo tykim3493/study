@@ -25,6 +25,10 @@ function add() {
     todoCheckbox.addEventListener("click", () => {
 		todoTextSpan.classList.toggle("line-through")
         todoTextSpan.classList.toggle("text-gray-400")
+        // 선택된 할일의 갯수 출력
+        const checkedTodo = document.querySelectorAll("#chk:checked")
+        const selectedCheckboxCnt = checkedTodo.length
+        document.querySelector("#printSelectedCheckboxCnt").innerText = selectedCheckboxCnt
     })
     
     const todoDiv = document.createElement("div")
@@ -151,9 +155,6 @@ function deleteAll() {
     selectAllCheckbox.checked = false
 }
 
-// 선택된 할일의 갯수 출력
-const checkedTodo = document.querySelectorAll("#chk:checked")
-const selectedCheckboxCnt = checkedTodo.length
-document.querySelector("#printSelectedCheckboxCnt").innerText = selectedCheckboxCnt
 
-// 엔터, 체크박스css, 포인터, const중복, 함수밖const
+
+// 엔터, 체크박스css, 포인터, const중복
